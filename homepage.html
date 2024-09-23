@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="/utils/include-html.js">
+</script>
+    <include-html head src="elements/head.html"></include-html>
+  </head>
+
+  <body class="bg-light">
+    <!-- <div include-html="elements/navbar.html"></div> -->
+    <include-html src="elements/navbar.html"></include-html>
+
+    <!--  -->
+    <div class="text-center mb-5 mt-15" style="margin-top: 100px">
+      <h1 class="display-5 fw-bolder mb-0">
+        <span class="text-gradient d-inline">Eventi popolari</span>
+      </h1>
+    </div>
+    <!---->
+    <div class="container">
+      <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow border-0 rounded-4 mb-5 overflow-hidden">
+            <img
+              src="/resources/img_1.jpg"
+              height="200"
+              width="50"
+              class="card-img-top"
+              style="object-fit: cover"
+              alt="Card Image 1"
+            />
+            <div class="card-body">
+              <div class="p-1">
+                <h2 class="fw-bolder">Evento 1</h2>
+                <span
+                  class="badge bg-gradient-primary-to-secondary text-white mb-4"
+                  ><div class="text-uppercase">Popolare · sardegna</div></span
+                >
+                <p>
+                  Descrizione breve evento 1 - Descrizione breve evento 1 -
+                  Descrizione breve evento 1
+                </p>
+                <a href="/event" class="btn btn-link btn-sm">Scopri di più</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow border-0 rounded-4 mb-5 overflow-hidden">
+            <img
+              src="/resources/img_2.jpg"
+              height="200"
+              width="50"
+              class="card-img-top"
+              style="object-fit: cover"
+              alt="Card Image 2"
+            />
+            <div class="card-body">
+              <div class="p-1">
+                <h2 class="fw-bolder">Evento 2</h2>
+                <span
+                  class="badge bg-gradient-primary-to-secondary text-white mb-4"
+                  ><div class="text-uppercase">Popolare · cagliari</div></span
+                >
+                <p>
+                  Descrizione breve evento 2 - Descrizione breve evento 2 -
+                  Descrizione breve evento 2
+                </p>
+                <a href="/event" class="btn btn-link btn-sm">Scopri di più</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card shadow border-0 rounded-4 mb-5 overflow-hidden">
+            <img
+              src="/resources/img_3.jpg"
+              height="200"
+              width="50"
+              class="card-img-top"
+              style="object-fit: cover"
+              alt="Card Image 3"
+            />
+            <div class="card-body">
+              <div class="p-1">
+                <h2 class="fw-bolder">Evento 3</h2>
+                <span
+                  class="badge bg-gradient-primary-to-secondary text-white mb-4"
+                  ><div class="text-uppercase">Popolare · trento</div></span
+                >
+                <p>
+                  Descrizione breve evento 3 - Descrizione breve evento 3 -
+                  Descrizione breve evento 3
+                </p>
+                <a href="/event" class="btn btn-link btn-sm">Scopri di più</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Offers carousel -->
+      <div
+        id="carouselExampleIndicators"
+        class="carousel carousel-dark slide"
+        data-bs-interval="3500"
+        data-bs-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+          ></li>
+          <li
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+          ></li>
+          <li
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+          ></li>
+        </ol>
+        <div class="carousel-inner row">
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-md-8 mb-4">
+                <div
+                  class="card shadow border-0 rounded-4 mb-5 position-relative overflow-hidden"
+                >
+                  <div class="card-body">
+                    <div class="p-3">
+                      <!-- Discount Alert -->
+                      <div class="alert alert-primary text-center fw-bold">
+                        20% Discount on events!
+                      </div>
+                      <h3 class="fw-bolder">Special Offer</h3>
+                      <p>
+                        Don't miss out on this limited-time offer. Book now and
+                        save 20% on your tickets!
+                      </p>
+                      <div class="d-flex gap-3 justify-content-between">
+                        <a href="/event" class="btn btn-outline-primary"
+                          >Grab the Deal</a
+                        >
+                        <a
+                          class="badge bg-gradient-primary-to-secondary text-white fs-5 m0"
+                          >-20%</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Discount Badge Decoration -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-md-8 mb-4">
+                <div
+                  class="card shadow border-0 rounded-4 mb-5 position-relative overflow-hidden"
+                >
+                  <div class="card-body">
+                    <div class="p-3">
+                      <!-- Discount Alert -->
+                      <div class="alert alert-primary text-center fw-bold">
+                        20% Discount on events!
+                      </div>
+                      <h3 class="fw-bolder">Special Offer</h3>
+                      <p>
+                        Don't miss out on this limited-time offer. Book now and
+                        save 20% on your tickets!
+                      </p>
+                      <div class="d-flex gap-3 justify-content-between">
+                        <a href="/event" class="btn btn-outline-primary"
+                          >Grab the Deal</a
+                        >
+                        <a
+                          class="badge bg-gradient-primary-to-secondary text-white fs-5 m0"
+                          >-20%</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Discount Badge Decoration -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-md-8 mb-4">
+                <div
+                  class="card shadow border-0 rounded-4 mb-5 position-relative overflow-hidden"
+                >
+                  <div class="card-body">
+                    <div class="p-3">
+                      <!-- Discount Alert -->
+                      <div class="alert alert-primary text-center fw-bold">
+                        20% Discount on events!
+                      </div>
+                      <h3 class="fw-bolder">Special Offer</h3>
+                      <p>
+                        Don't miss out on this limited-time offer. Book now and
+                        save 20% on your tickets!
+                      </p>
+                      <div class="d-flex gap-3 justify-content-between">
+                        <a href="/event" class="btn btn-outline-primary"
+                          >Grab the Deal</a
+                        >
+                        <a
+                          class="badge bg-gradient-primary-to-secondary text-white fs-5 m0"
+                          >-20%</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Discount Badge Decoration -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev d-none d-lg-flex"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-bs-slide="prev"
+        >
+          <span
+            class="carousel-control-prev-icon align-middle"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next d-none d-lg-flex"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
+      </div>
+    </div>
+    <!--Cookies consent -->
+    <div
+      id="cookieConsent"
+      class="position-fixed bottom-0 start-0 m-3 p-4 bg-light rounded shadow-lg"
+      style="z-index: 1050; max-width: 400px"
+    >
+      <h5 class="fw-bold">We use cookies</h5>
+      <p class="small">
+        This website uses cookies to ensure you get the best experience on our
+        website. <a href="#" class="text-primary">Learn more</a>
+      </p>
+      <div class="d-flex justify-content-end">
+        <button id="acceptCookies" class="btn btn-primary btn-sm">
+          Accept
+        </button>
+      </div>
+    </div>
+    <script>
+      // JavaScript to hide the cookie consent when the user clicks 'Accept'
+      document.getElementById("acceptCookies").addEventListener("click", function () {
+        document.getElementById("cookieConsent").style.display = "none";
+      });
+    </script>
+  </body>
+  <!--FOOTER-->
+  <hr class="py-0 my-0" />
+  <footer class="bg-white py-4 mt-auto">
+    <section class="bg-white">
+      <div class="container px-5">
+        <div class="row gx-5 justify-content-center">
+          <div class="col-xxl-8">
+            <div class="text-center my-5">
+              <h2 class="display-5 fw-bolder">
+                <span class="text-gradient d-inline">About us</span>
+              </h2>
+              <p class="lead fw-light mb-4">
+                Slogan riguardo la filosofia della presunta azienda
+              </p>
+              <p class="text-muted">
+                Piccola descrizione di tutte le cazzatine da flexare
+                dell'agenzia
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <hr width=30% class="py-0 my-0 mx-auto"> -->
+    <div class="d-flex justify-content-around">
+      <img width="120px" src="resources/dots.svg" alt="dots" />
+    </div>
+    <div class="container px-5 pt-4">
+      <div
+        class="row align-items-center justify-content-between flex-column flex-sm-row"
+      >
+        <div class="col-auto">
+          <div class="small m-0">Copyright © Your Website 2023</div>
+        </div>
+        <div class="col-auto">
+          <a class="small" href="#!">Legale</a>
+          <span class="mx-1">·</span>
+          <a class="small" href="#!">Partita iva</a>
+          <span class="mx-1">·</span>
+          <a class="small" href="#!">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="/utils/include-html.js">
+</script>
+</html>

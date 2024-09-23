@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="/utils/include-html.js">
+</script>
+    <include-html head src="elements/head.html"></include-html>
+  </head>
+
+  <body>
+    <include-html src="elements/navbar.html"></include-html>
+    <div class="container mt-10" style="margin-top: 100px">
+      <!-- Event Card -->
+      <div class="card mb-4">
+        <img
+          src="/resources/img_1.jpg"
+          class="card-img-top event-image"
+          style="max-height: 50vh; object-fit: cover"
+          alt="Event Image"
+        />
+        <div class="card-body">
+          <div class="d-flex align-items-center py-2">
+            <hr class="flex-grow-1" />
+            <h4 class="text-gradient mx-2">Nome dell'evento</h4>
+            <hr class="flex-grow-1" />
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
+            itaque accusantium odio, soluta, corrupti aliquam quibusdam tempora
+            at cupiditate quis eum maiores libero veritatis? Dicta facilis sint
+            aliquid ipsum atque?
+          </p>
+          <h4>Data e Ora:</h4>
+          <p class="card-text">15 Ottobre 2024, 20:00</p>
+          <h4>Località</h4>
+          <p>
+            <span class="card-text">Teatro di Milano, Via Roma 12, Milano</span>
+            &nbsp;&nbsp;&nbsp;
+            <a href="index.html"
+              >view on maps &nbsp;&nbsp; <span><i class="bi bi-map"></i></span
+            ></a>
+          </p>
+          <div class="mb-3" style="margin-top: 100px">
+            <div class="d-flex align-items-center py-2">
+              <hr class="flex-grow-1" />
+              <h4 class="text-gradient mx-2">
+                Seleziona Tipo di Biglietto e Quantità:
+              </h4>
+              <hr class="flex-grow-1" />
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <label for="ticketType" class="form-label"
+                  >Tipo di Biglietto:</label
+                >
+                <select id="ticketType" class="form-select">
+                  <option value="seat">Poltrona - €50</option>
+                  <option value="standing">Posto in Piedi - €30</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="ticketQuantity" class="form-label">Quantità:</label>
+                <input
+                  type="number"
+                  id="ticketQuantity"
+                  class="form-control"
+                  min="1"
+                  value="1"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Purchase Button -->
+          <a
+            href="/your-order"
+            class="btn btn-outline-primary text-gradient mb-3"
+            style="width: 100%"
+            >Acquista Biglietti</a
+          >
+          <div class="row">
+            <div class="col-md-6">
+              Contatta il venditore: <a href="347 201 7402">347 201 7402</a>
+            </div>
+            <div class="col-md-6 text-sm-end">
+              Email: <a href="prova">prova@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Image Carousel -->
+      <div
+        id="placeCarousel"
+        class="carousel slide mb-4"
+        data-bs-interval="3500"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card">
+              <img
+                src="/resources/img_1.jpg"
+                class="card-img-top"
+                alt="Place Image 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Immagine 1</h5>
+                <p class="card-description">
+                  Breve descrizione della prima immagine del luogo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <img
+                src="/resources/img_2.jpg"
+                class="card-img-top"
+                alt="Place Image 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Immagine 2</h5>
+                <p class="card-description">
+                  Breve descrizione della seconda immagine del luogo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <img
+                src="/resources/img_3.jpg"
+                class="card-img-top"
+                alt="Place Image 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Immagine 3</h5>
+                <p class="card-description">
+                  Breve descrizione della terza immagine del luogo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#placeCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Precedente</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#placeCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Successivo</span>
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src="utils/include-html.js">
+</script>
+</html>

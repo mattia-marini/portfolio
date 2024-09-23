@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="/utils/include-html.js">
+</script>
+    <include-html head src="elements/head.html"></include-html>
+    <style>
+      /* Full screen background image */
+      .background-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        scale: 80%;
+        opacity: 0.3;
+        z-index: -1; /* Ensure it's behind other content */
+        background-image: url("/resources/login-success.svg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Centering the content */
+      .content-container {
+        position: relative;
+        z-index: 1; /* Ensure it's above the background image */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Full viewport height */
+        padding: 20px;
+      }
+
+      /* Top SVG Animation */
+      .top-svg {
+        position: absolute;
+        top: -150px;
+        left: 0;
+        z-index: -2;
+        transform: rotate(0.5turn);
+        animation: slideInFromTop 0.6s ease-out forwards;
+      }
+
+      @keyframes slideInFromTop {
+        from {
+          transform: translateY(-100%) rotate(0.5turn);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0) rotate(0.5turn);
+          opacity: 1;
+        }
+      }
+
+      /* Bottom SVG Animation */
+      .bottom-svg {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        animation: slideInFromBottom 0.6s ease-out forwards;
+      }
+
+      @keyframes slideInFromBottom {
+        from {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      /* Image Fade In Animation */
+      .fade-in-image {
+        position: absolute;
+        right: 15%;
+        bottom: 0;
+        height: 80%;
+        z-index: -1;
+        animation: fadeIn 0.5s ease-in forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .icon-hover {
+        color: #6c757d; /* Initial color (text-muted) */
+        font-size: 25pt; /* Adjust size as needed */
+        transition: color 0.3s ease; /* Smooth transition for color change */
+      }
+
+      .icon-hover:hover {
+        color: blue; /* Color on hover (Bootstrap primary blue) */
+      }
+    </style>
+  </head>
+
+  <body style="padding: 0">
+    <img
+      src="/resources/login-success.svg"
+      class="fade-in-image"
+      alt="Image 1"
+    />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+      class="top-svg"
+    >
+      <path
+        fill="#f8f9fa"
+        fill-opacity="1"
+        d="M0,0C180,80,360,120,540,120C720,120,900,80,1080,120C1260,160,1440,120,1440,0L1440,320L0,320Z"
+      ></path>
+    </svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+      class="bottom-svg"
+    >
+      <path
+        fill="#f8f9fa"
+        fill-opacity="1"
+        d="M0,0C240,160,480,240,720,160C960,80,1200,160,1440,320L1440,320L0,320Z"
+      ></path>
+    </svg>
+    <!-- Registration Success Message -->
+    <div class="content-container">
+      <div
+        class="container d-flex align-items-center justify-content-center"
+        style="height: 100%"
+      >
+        <div class="col-md-6">
+          <!-- Success Alert -->
+          <div class="alert alert-success text-center" role="alert">
+            <h4 class="alert-heading">Registration Successful!</h4>
+            <p>Your account has been created successfully. Welcome aboard!</p>
+            <hr />
+            <p class="mb-0">
+              You can now
+              <a href="/login" class="alert-link">log in</a>
+              to your account.
+            </p>
+          </div>
+          <!-- Button to Return to Homepage -->
+          <div class="d-grid gap-2">
+            <a href="/homepage.html" class="btn btn-primary">Go to Homepage</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

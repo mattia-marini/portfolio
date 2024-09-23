@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="/utils/include-html.js">
+</script>
+    <include-html head src="elements/head.html"></include-html>
+  </head>
+  <body>
+    <include-html src="elements/navbar.html"></include-html>
+    <div class="container" style="margin-top: 100px">
+      <div class="row">
+        <!-- Left Column (Cart and Payment) -->
+        <div
+          id="leftCol"
+          class="col-md-10 mx-auto"
+          style="transition: transform 0.5s ease"
+        >
+          <!-- Cart Section -->
+          <div class="card mb-4">
+            <div class="card-header bg-primary text-white">Carrello</div>
+            <div class="card-body" style="gap: 40px">
+              <div id="tickets"></div>
+              <hr />
+              <h5>
+                <span>Totale: €</span>
+                <span id="total-price">100</span>
+              </h5>
+            </div>
+          </div>
+          <!-- Payment Section -->
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              Metodo di Pagamento
+            </div>
+            <div class="card-body">
+              <ul
+                class="nav nav-tabs mb-3"
+                id="paymentMethodTab"
+                role="tablist"
+              >
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="mastercard-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#mastercard"
+                    type="button"
+                    role="tab"
+                    aria-controls="mastercard"
+                    aria-selected="true"
+                  >
+                    MasterCard
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="visa-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#visa"
+                    type="button"
+                    role="tab"
+                    aria-controls="visa"
+                    aria-selected="false"
+                  >
+                    Visa
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="paypal-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#paypal"
+                    type="button"
+                    role="tab"
+                    aria-controls="paypal"
+                    aria-selected="false"
+                  >
+                    PayPal
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content" id="paymentMethodTabContent">
+                <!-- MasterCard Form -->
+                <div
+                  class="tab-pane fade show active"
+                  id="mastercard"
+                  role="tabpanel"
+                  aria-labelledby="mastercard-tab"
+                >
+                  <div class="mb-3">
+                    <label for="mastercardNumber" class="form-label"
+                      >Numero di Carta</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="mastercardNumber"
+                      placeholder="1234 5678 9012 3456"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="mastercardExpiry" class="form-label"
+                      >Scadenza</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="mastercardExpiry"
+                      placeholder="MM/YY"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="mastercardCVC" class="form-label">CVC</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="mastercardCVC"
+                      placeholder="CVC"
+                    />
+                  </div>
+                </div>
+                <!-- Visa Form -->
+                <div
+                  class="tab-pane fade"
+                  id="visa"
+                  role="tabpanel"
+                  aria-labelledby="visa-tab"
+                >
+                  <div class="mb-3">
+                    <label for="visaNumber" class="form-label"
+                      >Numero di Carta</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="visaNumber"
+                      placeholder="1234 5678 9012 3456"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="visaExpiry" class="form-label">Scadenza</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="visaExpiry"
+                      placeholder="MM/YY"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="visaCVC" class="form-label">CVC</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="visaCVC"
+                      placeholder="CVC"
+                    />
+                  </div>
+                </div>
+                <!-- PayPal Form -->
+                <div
+                  class="tab-pane fade"
+                  id="paypal"
+                  role="tabpanel"
+                  aria-labelledby="paypal-tab"
+                >
+                  <div class="mb-3">
+                    <label for="paypalEmail" class="form-label"
+                      >Email PayPal</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="paypalEmail"
+                      placeholder="email@example.com"
+                    />
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-primary mt-3" style="width: 100%">
+                Conferma Pagamento
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Right Column (Event Info and Ticket Purchase) -->
+        <div id="rightCol" class="col-md-6 d-none">
+          <!-- Event Card -->
+          <div class="card mb-4">
+            <img
+              src="/resources/img_1.jpg"
+              class="card-img-top event-image"
+              style="max-height: 50vh; object-fit: cover"
+              alt="Event Image"
+            />
+            <div class="card-body">
+              <div class="d-flex align-items-center py-2">
+                <hr class="flex-grow-1" />
+                <h4 id="card-name" class="text-gradient mx-2">
+                  Nome dell'evento
+                </h4>
+                <hr class="flex-grow-1" />
+              </div>
+              <p id="card-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <h4>Data e Ora:</h4>
+              <p id="card-date" class="card-text">15 Ottobre 2024, 20:00</p>
+              <h4>Località</h4>
+              <p>
+                <span id="card-place" class="card-text"
+                  >Teatro di Milano, Via Roma 12, Milano</span
+                >
+              </p>
+              <!-- Ticket Selection -->
+              <div class="mb-3">
+                <div class="d-flex align-items-center py-2">
+                  <hr class="flex-grow-1" />
+                  <h4 class="text-gradient mx-2">
+                    Seleziona Tipo di Biglietto e Quantità:
+                  </h4>
+                  <hr class="flex-grow-1" />
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <label for="ticketType" class="form-label"
+                      >Tipo di Biglietto:</label
+                    >
+                    <select id="card-type" name="card-type" class="form-select">
+                      <!-- List of ticket options -->
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <label for="card-quantity" class="form-label"
+                      >Quantità:</label
+                    >
+                    <input
+                      id="card-quantity"
+                      type="number"
+                      class="form-control"
+                      min="1"
+                      value="1"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Purchase Button -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="your-order.js">
+</script>
+    <script src="utils/include-html.js">
+</script>
+  </body>
+</html>
