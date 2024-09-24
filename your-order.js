@@ -117,7 +117,7 @@ function renderTickets(items) {
         "
       >
         <img
-          src="/resources/${item.img}"
+          src="resources/${item.img}"
           alt="Ticket Image"
           style="object-fit: cover; height: 50px"
         />
