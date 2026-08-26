@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+{% block title %}
+  {{ config.extra.site_title }}'s blog
+{% endblock title %}
+{% block content %}
+<div class="page-content">
+    <div class="wrapper">
+        <div id="content" class="text-justify">
+    {% for post in paginator.pages %}
+      {% set this_year = post.year %}
+      {% if loop.first %}
+        <h2 class="text-right">{{this_year}}</h2>
+        <nav class="posts">
+      {% endif %}
+        <div class="posts-item">
+          <h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
+          <time class="post-date" datetime="{{ post.date | date(format="%Y-%m-%dT%H:%M:%S") }}">
+            {{ post.date | date(format="%B %d %Y") }}
+              · {{<read_time words={post.word_count} />}}
+          </time>
+          {% if post.summary %}{{ post.summary | safe | striptags | replace(from="🔗", to="") }}{% endif %}
+        </div>
+      {% if loop.last %}
+        </nav>
+      {% else %}
+        {% set next_index = loop.index0+1 %}
+        {% set pre_year = paginator.pages[next_index].year %}
+        {% if this_year != pre_year %}
+          </nav>
+          <h2 class="text-right">{{pre_year}}</h2>
+          <nav class="posts">
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% block pagination %}
+    {% if paginator.previous or paginator.next %}
+        <nav class="pagination">
+            {% if paginator.previous %}
+                <span><a class="previous" href="{{ paginator.previous }}">⟸  Previous</a></span>
+            {% endif %}
+            {% if paginator.next %}
+                <a class="next" href="{{ paginator.next }}">Next ⟹</a>
+            {% endif %}
+        </nav>
+    {% endif %}
+    {% endblock pagination %}
+      </div>
+    </div>
+</div>
+{% endblock content %}

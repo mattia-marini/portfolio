@@ -1,0 +1,3 @@
+[submodule "themes/dark-magic"]
+	path = themes/dark-magic
+	url = https://github.com/DirectorX/dark-magic.git

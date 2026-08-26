@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="viewport" content="width=device-width" />
+  {% block css %}
+  <link rel="stylesheet" href="{{ get_url(path='style.css', trailing_slash=false, cachebust=false) | safe }}">
+  {% endblock css %}
+  {% if config.generate_feeds %}{% for feed in config.feed_filenames %}
+  <link rel="alternate" type={% if feed=="atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %}
+    title="RSS" href="{{ get_url(path=feed) | safe }}">{% endfor %}{% endif %}
+</head>
+
+<body>
+  <div class="container">
+    {% block header %}
+    <div id="header">
+      {% if not section.extra.no_default_header %}
+      {% if config.extra.site_title %}
+      <h1><a class="site-title" href="{{ config.base_url }}/">{{ config.extra.site_title }}</a></h1>
+      {% endif %}
+      <ul class="nav nav-tabs">
+        {% set current = section.path | lower | split(pat="/") | nth(n=1) %}
+        {% for node in config.extra.nav_bar %}
+        {% set active = node.url | lower | split(pat="/") | nth(n=1) %}
+        {% if node.external %}
+        <li><a class="page-link" href="{{ node.url }}" {% if node.target %} target="{{ node.target }}" {% endif %}>{{
+            node.name }}</a></li>
+        {% else %}
+        <li {% if active==current %}class="active" {% endif %}><a class="page-link" href="{{ node.url | replace(from="
+            $BASE_URL", to=config.base_url) }}">{{ node.name }}</a></li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% endblock header %}
+    {% block content %}
+    <div class="page-content">
+      <div class="wrapper{% if section.extra.text_center %} text-center {% endif %}">
+        {{ section.content | safe }}
+      </div>
+    </div>
+    {% endblock content %}
+    {% block footer %}
+    {% if not section.extra.no_default_footer %}
+    {% set current_year = now() | date(foramt="%Y") | split(pat="-") | first | int %}
+    <div id="footer" class="modal-footer">
+      Copyright &copy; {% if config.extra.since < current_year %}{{ config.extra.since }}-{% endif %}{{ current_year }}
+        {% if config.extra.site_title %} <span>{{ config.extra.site_title }}</span> <a target="_blank"
+          href="{{ config.base_url }}/atom.xml">subscribe</a>
+        {% endif %}
+    </div>
+  </div>
+  {% endif %}
+  {% endblock footer %}
+</body>
+
+</html>

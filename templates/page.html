@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+{% block title %}
+  {{ page.title }}
+{% endblock title %}
+{% block header %}
+    <div id="header">
+{% if config.extra.site_title %}
+        <h1><a class="site-title" href="{{ config.base_url }}/">{{ config.extra.site_title }}</a></h1>
+{% endif %}
+        <ul class="nav nav-tabs">
+{% set current = page.path | lower | split(pat="/") | nth(n=1) %}
+{% for node in config.extra.nav_bar %}
+{% if node.external %}
+            <li><a class="page-link" href="{{ node.url }}"{% if node.target %} target="{{ node.target }}"{% endif %}>{{ node.name }}</a></li>
+{% else %}
+{% set active = node.url | lower | split(pat="/") | nth(n=1) %}
+            <li {% if active == current %}class="active"{% endif %}><a class="page-link" href="{{ node.url | replace(from="$BASE_URL", to=config.base_url) }}">{{ node.name }}</a></li>
+{% endif %}
+{% endfor %}
+        </ul>
+    </div>
+{% endblock header %}
+{% block content %}
+{% set before_compact = page.content | split(pat="<!-- compact -->") | nth(n=0) | default(value="") %}
+{% set after_compact = page.content | split(pat="<!-- /compact -->") | nth(n=1) | default(value="") %}
+{% set body_content = before_compact ~ after_compact %}
+<div class="page-content">
+    <div class="wrapper">
+        <div id="content">
+            {{ body_content | safe }}
+        </div>
+      </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,85 @@
+{% extends "index.html" %}
+{% block title %}
+  {{ config.extra.site_title }}'s {{ section.title | default(value="experiences") }}
+{% endblock title %}
+{% block content %}
+<div class="page-content">
+    <div class="wrapper">
+        <div id="content" class="text-justify">
+    {% set is_expandable = section.extra.expandable | default(value=false) %}
+    {% for page in section.pages %}
+        {% set compact_raw = page.content | split(pat="<!-- compact -->") | nth(n=1) | default(value="") %}
+        {% set compact = compact_raw | split(pat="<!-- /compact -->") | nth(n=0) | default(value="") | markdown | safe %}
+        <div class="list-item{% if is_expandable %} list-clickable{% endif %}"{% if not is_expandable %} data-href="{{ page.permalink }}"{% endif %}>
+          <div class="list-header">
+            <div class="list-main">
+              <h3 class="list-title">
+                {% if page.extra.link %}
+                  <a href="{{ page.extra.link }}" target="_blank" rel="noopener noreferrer" class="list-ext-link">{{ page.title }}</a>
+                {% else %}
+                  <a href="{{ page.permalink }}">{{ page.title }}</a>
+                {% endif %}
+              </h3>
+              {% if page.extra.subtitle %}
+                <div class="list-subtitle">{{ page.extra.subtitle }}</div>
+              {% endif %}
+            </div>
+            {% if page.extra["top-right"] %}
+              <span class="list-top-right">{{ page.extra["top-right"] }}</span>
+            {% endif %}
+          </div>
+          {% if compact %}
+            <div class="list-summary">{{ compact }}</div>
+          {% endif %}
+          {% if is_expandable %}
+            {% set after_compact = page.content | split(pat="<!-- /compact -->") | nth(n=1) | default(value="") %}
+            <div class="list-expand-content">{{ after_compact | safe }}</div>
+          {% endif %}
+        </div>
+        {% if not loop.last %}
+          <hr class="list-separator">
+        {% endif %}
+    {% endfor %}
+      </div>
+    </div>
+</div>
+<script>
+(function(){
+  var items = document.querySelectorAll('.list-clickable');
+  for (var i = 0; i < items.length; i++) {
+    (function(item){
+      var startX, startY;
+      item.addEventListener('mousedown', function(e){
+        startX = e.clientX;
+        startY = e.clientY;
+      });
+      item.addEventListener('click', function(e){
+        if (e.target.closest('.list-ext-link')) return;
+        var dx = e.clientX - startX;
+        var dy = e.clientY - startY;
+        if (dx * dx + dy * dy > 16) return;
+        var content = item.querySelector('.list-expand-content');
+        if (content) content.classList.toggle('open');
+      });
+    })(items[i]);
+  }
+  var navItems = document.querySelectorAll('.list-item[data-href]');
+  for (var j = 0; j < navItems.length; j++) {
+    (function(item){
+      var startX, startY;
+      item.addEventListener('mousedown', function(e){
+        startX = e.clientX;
+        startY = e.clientY;
+      });
+      item.addEventListener('click', function(e){
+        if (e.target.closest('a')) return;
+        var dx = e.clientX - startX;
+        var dy = e.clientY - startY;
+        if (dx * dx + dy * dy > 16) return;
+        window.location.href = item.getAttribute('data-href');
+      });
+    })(navItems[j]);
+  }
+})();
+</script>
+{% endblock content %}

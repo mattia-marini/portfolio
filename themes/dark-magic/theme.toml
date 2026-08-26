@@ -1,0 +1,18 @@
+name = "dark-magic"
+description = "Elegant dark theme"
+license = "ICS"
+homepage = "https://github.com/DirectorX/dark-magic"
+min_version = "0.1.0"
+demo = "https://directorx.github.io/dark-magic/"
+
+[extra]
+nav_bar = [
+    {url = "$BASE_URL/", name = "home"},
+    {url = "$BASE_URL/blog", name = "blog"},
+    {url = "$BASE_URL/links", name = "links"},
+    {url = "https://github.com/mattia-marini", name = "github", external = true, target="_blank"},
+]
+
+[author]
+name = "DirectorX"
+repo = "https://github.com/DirectorX/dark-magic"

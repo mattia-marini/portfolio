@@ -1,0 +1,26 @@
+# The URL the site will be built for
+
+base_url = "https://mattia-marini.github.io/portfolio/"
+
+title = "Mattia Marini"
+generate_feeds = true
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+[markdown.highlighting]
+extra_themes = ["extra/website-theme.json"]
+theme = "website-theme"
+
+[extra]
+site_title = "Mattia Marini"
+since = 2019
+nav_bar = [
+    {url = "$BASE_URL/", name = "home"},
+    {url = "$BASE_URL/experiences/", name = "experiences"},
+    {url = "$BASE_URL/projects/", name = "projects"},
+    {url = "https://github.com/mattia-marini", name = "github", external = true, target="_blank"},
+]
