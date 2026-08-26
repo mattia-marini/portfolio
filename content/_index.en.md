@@ -15,6 +15,6 @@ no_default_footer = true
 · [twitter](https://twitter.com/example)
 
 
-[esperienze](@/experiences/_index.md) · [progetti](@/projects/_index.md)
+[experiences](@/experiences/_index.md) · [projects](@/projects/_index.md)
 
 </div>

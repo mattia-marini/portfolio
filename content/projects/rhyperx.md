@@ -2,22 +2,18 @@
 title = "rhyperx"
 [extra]
 top-right = ""
-subtitle = "Hypergraph library with state-of-the-art motif counting."
+subtitle = "Libreria per ipergrafi con conteggio motif all'avanguardia."
 link = "https://github.com/rhyperx"
 +++
 
-<!-- compact -->A performance-focused implementation of hypergraph motif counting, written in Rust and designed to be exposed through Python bindings.<!-- /compact -->
+<!-- compact -->
+Una libreria per ipergrafi orientata alle prestazioni, scritta in `Rust` e progettata per essere esposta tramite binding `Python`.
+<!-- /compact -->
 
-```rust
-use rhyperx::Hypergraph;
+I punti salienti includono:
 
-let mut hg = Hypergraph::new();
-hg.add_edge(&[1, 2, 3]);
-hg.add_edge(&[2, 3, 4]);
-hg.add_edge(&[3, 4, 5]);
+- Conteggio esatto di *motif* **allo stato dell'arte** su ipergrafi pesati e non
+- Implementazioni estremamente type-safe senza sacrificare le prestazioni
+- Euristiche per *fingerprinting* di *graphlet* accelerate via `SIMD`
 
-let motifs = hg.count_motifs(3);
-println!("{:?}", motifs);
-```
-
-The library supports arbitrary-sized hyperedges, streaming enumeration of motifs up to size 5, and zero-cost Python interop via PyO3.
+Questo progetto mira a essere una riscrittura in `Rust` della libreria Python [HypergraphX](https://github.com/HGX-Team/hypergraphx).

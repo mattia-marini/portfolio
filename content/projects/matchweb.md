@@ -1,16 +1,17 @@
 +++
-title = "Team04_MatchWeb + Team04_REST"
+title = "matchweb webapp"
 [extra]
 top-right = ""
-subtitle = "Full-stack betting-site simulation."
+subtitle = "Simulazione full-stack di un sito scommesse."
 link = "https://github.com/mattia-marini/Team04_MatchWeb"
 +++
 
-<!-- compact -->A university project in full-stack web development using Spring, HTML, CSS, and JavaScript that simulates a betting site.<!-- /compact -->
+<!-- compact -->Un progetto universitario di sviluppo web full-stack usando `Spring`, `HTML`, `CSS` e `JavaScript`, che simula un sito di scommesse.<!-- /compact -->
 
-- **REST API** (Spring Boot) — odds management, user accounts, match scheduling
-- **Web frontend** — Thymeleaf templates, real-time score updates via WebSocket
-- **Database** — PostgreSQL with Flyway migrations
-- **CI/CD** — GitHub Actions for test + deploy
+Lo stack tecnologico utilizzato è il seguente:
 
-Two separate repositories: `Team04_REST` for the backend API, `Team04_MatchWeb` for the frontend.
+- **API REST** (`Spring Boot`) — gestione quote, account utenti, calendario match
+- **Frontend web** — template Thymeleaf, aggiornamenti in tempo reale via WebSocket
+- **Database** — H2 (in-memory)
+
+Due repository separati: `Team04_REST` per il backend API e `Team04_MatchWeb` per il frontend.

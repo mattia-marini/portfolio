@@ -2,18 +2,18 @@
 title = "d.r.o.n.e"
 [extra]
 top-right = ""
-subtitle = "Simulated drone network over TCP."
+subtitle = "Rete di droni simulata su protocollo TCP-like."
 link = "https://github.com/AP-2024-25-D-R-O-N-E"
 +++
 
 <!-- compact -->
-A drone network simulation built on TCP, with a focus on distributed systems and real-time communication in distributed environments.
-A drone network simulation built on TCP, with a focus on distributed systems and real-time communication in distributed environments.
-A drone network simulation built on TCP, with a focus on distributed systems and real-time communication in distributed environments.
+Una simulazione di rete di droni costruita su un protocollo custom simile a TCP, che realizza comunicazione in tempo reale in ambienti distribuiti, con particolare attenzione alla sicurezza in contesti in cui la comunicazione può essere disturbata.
 <!-- /compact -->
 
-Key features:
-- Custom protocol for drone-to-drone messaging
-- Real-time telemetry streaming to a central dashboard
-- Failure detection and automatic rerouting
-- Configurable network topologies
+Caratteristiche principali:
+- Protocollo custom per la messaggistica drone-to-drone
+- Streaming di telemetria in tempo reale con architetture *client-server* e *peer-to-peer*
+- Rilevamento dei guasti e reindirizzamento automatico
+- Topologie di rete configurabili
+
+Diversi team hanno sviluppato droni diversi, aderendo al suddetto protocollo. Questo progetto implementa un drone con tale protocollo, insieme a una suite per controllare l'intera simulazione coinvolgendo i droni degli altri team. Nel progetto sono anche sviluppati prototipi per diversi tipi di client e server.

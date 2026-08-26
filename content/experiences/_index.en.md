@@ -1,7 +1,6 @@
 +++
-title = "progetti"
+title = "experiences"
 template = "blog.html"
 [extra]
 hide_title = true
-expandable = true
 +++

@@ -4,6 +4,7 @@ base_url = "https://mattia-marini.github.io/portfolio/"
 
 title = "Mattia Marini"
 generate_feeds = true
+default_language = "it"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -14,6 +15,9 @@ build_search_index = false
 [markdown.highlighting]
 extra_themes = ["extra/website-theme.json"]
 theme = "website-theme"
+
+[languages]
+[languages.en]
 
 [extra]
 site_title = "Mattia Marini"

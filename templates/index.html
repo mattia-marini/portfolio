@@ -38,8 +38,24 @@
         {% endif %}
         {% endfor %}
       </ul>
+      {% endif %}
+      {% if page is defined %}
+      {% set current_lang = page.lang %}
+      {% set translations = page.translations %}
+      {% elif section is defined %}
+      {% set current_lang = section.lang %}
+      {% set translations = section.translations | default(value=[]) %}
+      {% else %}
+      {% set current_lang = "it" %}
+      {% set translations = [] %}
+      {% endif %}
+      <div class="lang-switcher">
+        <span class="lang-current">{{ current_lang | upper }}</span>
+        {% for t in translations %}
+        | <a href="{{ t.permalink }}" class="lang-link">{{ t.lang | upper }}</a>
+        {% endfor %}
+      </div>
     </div>
-    {% endif %}
     {% endblock header %}
     {% block content %}
     <div class="page-content">

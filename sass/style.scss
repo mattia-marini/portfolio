@@ -168,6 +168,27 @@ font-size: 1.15em;
     font-size: 44px;
     font-weight: 700;
 }
+#header {
+  position: relative;
+}
+.lang-switcher {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.9em;
+  padding: 10px 0;
+}
+.lang-switcher .lang-current {
+  color: #8dc;
+  font-weight: bold;
+}
+.lang-switcher .lang-link {
+  color: #f8f8f8;
+  border: 0;
+}
+.lang-switcher .lang-link:hover {
+  color: #8fc;
+}
 #icecast {
     width: 80%;
     height: 100%;
@@ -339,10 +360,43 @@ ul.pager li {
   transition: max-height 0.3s ease, opacity 0.25s ease;
   opacity: 0;
   color: #999;
+  padding: 0 2rem;
 }
 .list-expand-content.open {
   max-height: 600px;
   opacity: 1;
+  padding-top: 2rem;
+}
+
+.exam-table {
+  margin: 1.5rem auto;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 700px;
+  font-size: 0.9em;
+}
+.exam-table th,
+.exam-table td {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #333;
+  text-align: left;
+}
+.exam-table th {
+  color: #f8f8f8;
+  background-color: #1a1a1a;
+  font-weight: 600;
+}
+.exam-table td {
+  color: #ccc;
+}
+.exam-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: #f8f8f8;
+}
+.exam-table tr:nth-child(even) td {
+  background-color: #161616;
 }
 
 @media (max-width: 640px) {
