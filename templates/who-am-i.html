@@ -10,31 +10,45 @@
 
 <div class="who-top">
   <div class="who-photo">
-    <img src="{{ get_url(path='/cv_image.jpg', cachebust=false) }}" alt="Mattia Marini">
+    <img src="{{ get_url(path='/cv_image.jpg', cachebust=false) }}" alt="Mattia Marini" width="200" height="225">
   </div>
   <div class="who-intro">
     {% if current_lang == "it" %}
-    <p>
-      Sono un programmatore <strong>low-level</strong> con una forte passione per gli <strong>algoritmi</strong>
-      e la loro eleganza. La mia ricerca si concentra sull'analisi di <em>motif</em> su <strong>ipergrafi</strong>
-      pesati di larga scala, ambito in cui ho contribuito a definire l'attuale stato dell'arte.
-    </p>
-    <p>
-      Oltre al codice, suono la <strong>chitarra</strong> — sia elettrica che acustica — e mi occupo
-      di produzione musicale digitale. Credo che la musica e la programmazione condividano la stessa
-      ricerca di precisione, creatività e disciplina.
-    </p>
-    {% else %}
-    <p>
-      I am a <strong>low-level programmer</strong> with a strong passion for <strong>algorithms</strong>
-      and their elegance. My research focuses on <em>motif</em> analysis on large-scale <strong>weighted hypergraphs</strong>,
-      where I have contributed to defining the current state of the art.
-    </p>
-    <p>
-      Beyond code, I play the <strong>guitar</strong> — both electric and acoustic — and work on
-      digital music production. I believe music and programming share the same pursuit of precision,
-      creativity, and discipline.
-    </p>
+<p>
+Sono un laureando in Informatica presso <strong>l'Università degli Studi di Trento</strong>, attivo nella ricerca scientifica nel campo degli
+algoritmi, con solida esperienza nella didattica individuale
+</p>
+
+<p>
+Ho vinto un <a href="https://olimpiadi-informatica.it/olimpiadi-italiane-2021/">bronzo in fase nazionale</a>
+alle <a href="https://www.olimpiadi-informatica.it/">Olimpiadi di Informatica</a>.
+</p>
+
+<p>
+Unisco una forte propensione al <strong>problem solving</strong> ad un marcato
+<strong>interesse per la didattica</strong> delle discipline scientifiche.
+Amo Rust, la programmazione a basso livello, gli algoritmi e le loro applicazioni a sistemi reali.
+</p>
+
+<p>
+Oltre al codice, suono la <strong>chitarra elettrica</strong> e, talvolta, mi occupo di produzione musicale.
+Credo che la musica e la programmazione condividano la medesima ricerca di precisione, eleganza e creatività.
+</p>
+{% else %}
+<p>
+I am a Computer Science student at the <strong>University of Trento</strong>, actively involved in scientific research
+in the field of algorithms, with solid experience in individual teaching. I am a
+<a href="https://olimpiadi-informatica.it/olimpiadi-italiane-2021/">national bronze medalist</a>
+at the <a href="https://www.olimpiadi-informatica.it/">Italian Olympiad in Informatics</a>.
+I combine a strong aptitude for <strong>problem solving</strong> with a marked
+<strong>interest in teaching</strong> scientific subjects.
+I love Rust, low-level programming, algorithms, and their applications to real-world systems.
+</p>
+
+<p>
+Beyond code, I play the <strong>electric guitar</strong> and occasionally work on music production.
+I believe that music and programming share the same pursuit of precision, elegance, and creativity.
+</p>
     {% endif %}
   </div>
 </div>
@@ -102,6 +116,10 @@
     </div>
 
   </div>
+</div>
+
+<div class="who-cv">
+  <a href="{{ get_url(path='/cv.pdf', cachebust=false) }}" class="cv-button" download>{% if current_lang == "it" %}Scarica il CV{% else %}Download CV{% endif %}</a>
 </div>
 
         </div>

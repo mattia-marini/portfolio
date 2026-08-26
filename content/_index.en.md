@@ -7,7 +7,7 @@ no_default_footer = true
 
 <div style="min-height: 80vh; display: flex; flex-direction: column; justify-content: center;">
 
-<h1 style="font-size: 60px; font-weight: bold;">Mattia Marini</h1>
+<h1 class="home-title">Mattia Marini</h1>
 
 ### software engineer
 

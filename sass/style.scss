@@ -4,6 +4,9 @@
 html {
     font-family: sans-serif;
     font-size: 14px;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    overflow-y: scroll;
 }
 body {
     font-family: "Source Code Pro", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -69,6 +72,11 @@ p {
 .text-justify {
     text-align: justify;
 }
+@media (max-width: 640px) {
+  .text-justify {
+    text-align: left;
+  }
+}
 ol, ul {
     margin-top: 0;
     margin-bottom: 10px;
@@ -78,27 +86,32 @@ ol, ul {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    width: 100%;
+    max-width: 1170px;
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 .page-content {
+    // padding: 2rem;
     flex: 1;
+    font-size: clamp(14px, 12px + 0.625vw, 16px);
 }
-@media (min-width: 768px) {
-    .container {
-        width: 750px;
-    }
+.page-content h1 {
+    font-size: clamp(24px, 16px + 3.125vw, 36px);
 }
-@media (min-width: 992px) {
-    .container {
-        width: 970px;
-    }
+.page-content h2 {
+    font-size: clamp(21px, 14px + 2.5vw, 30px);
 }
-@media (min-width: 1200px) {
-    .container {
-        width: 1170px;
-    }
+.page-content h3 {
+    font-size: clamp(18px, 12px + 1.875vw, 24px);
+}
+.page-content .list-title {
+    font-size: clamp(20px, 14px + 1.875vw, 26px);
+}
+.page-content .home-title {
+    font-size: clamp(32px, 10px + 7.5vw, 60px);
+    font-weight: bold;
 }
 .nav {
     padding-left: 0;
@@ -163,27 +176,49 @@ font-size: 1.15em;
 #footer a:hover {
   color: #8fc;
 }
-#header h1 {
-    font-family: "Source Code Pro", "monospace";
-    font-size: 44px;
-    font-weight: 700;
-}
 #header {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.header-top {
+  display: flex;
+  // justify-content: flex-end;
+justify-content: space-between;
+  align-items: flex-start;
+}
+.header-top h1 {
+  font-family: "Source Code Pro", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 36px;
+  font-weight: 700;
 }
 .lang-switcher {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 0.9em;
+  flex-shrink: 0;
+  /* keeps the switcher flush right even when the site title is absent (homepage) */
+  margin-left: auto;
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 500;
   padding: 10px 0;
+  /* 1.6em + 1em + 1.6em: fixed footprint, independent of which side is bold */
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
 }
 .lang-switcher .lang-link {
+  /* em resolves off font-size only, so bold vs regular occupy identical space
+     (ch would resolve off the element's own weight and shift) */
+  flex: 0 0 1.6em;
+  text-align: center;
   color: #f8f8f8;
   border: 0;
 }
-.lang-switcher .lang-link.lang-active {
+.lang-switcher .lang-sep {
+  flex: 0 0 1em;
+  text-align: center;
   color: #f8f8f8;
+}
+.lang-switcher .lang-link.lang-active {
+  color: #8dc;
   font-weight: bold;
 }
 .lang-switcher .lang-link:hover {
@@ -210,7 +245,7 @@ pre {
     border: 1px solid #333;
     border-radius: 6px;
     overflow: hidden;
-    font-family: "Source Code Pro", "monospace" !important;
+    font-family: "Source Code Pro", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
 }
 code {
     padding: 2px 4px;
@@ -296,11 +331,16 @@ ul.pager li {
 
 /* shared list layout (experiences & projects) */
 #content {
-  padding: 0;
   color: #999;
 }
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
   color: #f8f8f8;
+}
+#content.page-detail {
+  padding: 2rem;
+}
+#content.page-detail h2:first-of-type {
+  margin-top: 0;
 }
 .list-item {
   padding: 2rem;
@@ -426,14 +466,21 @@ ul.pager li {
 }
 .who-photo {
   flex-shrink: 0;
-}
-.who-photo img {
   width: 200px;
   height: 225px;
+}
+.who-photo img {
+  width: 100%;
+  height: 100%;
   border-radius: 16px;
   object-fit: cover;
   object-position: center 25%;
   border: 2px solid #333;
+  animation: fadeIn 0.5s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 .who-intro {
   flex: 1;
@@ -485,16 +532,38 @@ ul.pager li {
   color: #777;
   font-size: 0.85em;
 }
+.who-cv {
+  text-align: center;
+  margin-top: 3rem;
+}
+.cv-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #8dc;
+  border-radius: 8px;
+  color: #8dc;
+  font-size: 1em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.cv-button:hover {
+  background-color: #8dc;
+  color: #111;
+  text-decoration: none;
+}
 @media (max-width: 760px) {
   .who-top {
     flex-direction: column;
     text-align: center;
   }
-  .who-photo img {
+  .who-photo {
     width: 100%;
-    max-width: 320px;
     height: auto;
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
+    max-width: 320px;
+  }
+  .who-photo img {
+    aspect-ratio: 1/1;
   }
   .who-bottom {
     flex-direction: column;
@@ -522,46 +591,32 @@ ul.pager li {
   body {
     font-size: 18px;
   }
-  h1 {
-    font-size: 40px;
-  }
-  h2 {
-    font-size: 34px;
-  }
-  h3 {
-    font-size: 28px;
-  }
-  .list-title {
-    font-size: 30px;
+  .lang-switcher {
+    font-size: 22px;
   }
   #header h1 {
-    font-size: 48px;
+    font-size: 24px;
   }
   .nav > li > a {
     font-size: 1.2em;
   }
   .nav-tabs {
     overflow-x: auto;
+    overflow-y: hidden;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     flex-wrap: nowrap;
     display: flex;
+    scrollbar-width: none;
+  }
+  .nav-tabs::-webkit-scrollbar {
+    display: none;
   }
   .nav-tabs > li {
     float: none;
     flex-shrink: 0;
   }
-  .list-header {
-    flex-direction: column;
-    gap: 0.25rem;
-  }
   .list-top-right {
-    align-self: flex-start;
-  }
-  .list-summary {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    display: none;
   }
 }

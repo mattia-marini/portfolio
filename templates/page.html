@@ -2,54 +2,14 @@
 {% block title %}
   {{ page.title }}
 {% endblock title %}
-{% block header %}
-    <div id="header">
-{% if config.extra.site_title %}
-        <h1><a class="site-title" href="{{ config.base_url }}/{% if page.lang != "it" %}en/{% endif %}">{{ config.extra.site_title }}</a></h1>
-{% endif %}
-        <ul class="nav nav-tabs">
-{% set current_lang = page.lang %}
-{% set current = "" %}
-{% set segments = page.path | lower | split(pat="/") %}
-{% if current_lang == "en" %}
-  {% set current = segments | nth(n=2) | default(value="") %}
-{% else %}
-  {% set current = segments | nth(n=1) | default(value="") %}
-{% endif %}
-{% for node in config.extra.nav_bar %}
-        {% if current_lang == "it" %}
-          {% set nav_name = node.name | replace(from="experiences", to="esperienze") | replace(from="projects", to="progetti") | replace(from="who", to="chi sono") %}
-        {% else %}
-          {% set nav_name = node.name | replace(from="experiences", to="experiences") | replace(from="projects", to="projects") | replace(from="who", to="who am i") %}
-        {% endif %}
-{% if node.external %}
-            <li><a class="page-link" href="{{ node.url }}"{% if node.target %} target="{{ node.target }}"{% endif %}>{{ nav_name }}</a></li>
-{% else %}
-{% set active = node.url | lower | split(pat="/") | nth(n=1) %}
-            <li {% if active == current %}class="active"{% endif %}><a class="page-link" href="{% if current_lang == "it" %}{{ node.url | replace(from="$BASE_URL/", to=config.base_url ~ '/') }}{% else %}{{ node.url | replace(from="$BASE_URL/", to=config.base_url ~ '/' ~ current_lang ~ '/') }}{% endif %}">{{ nav_name }}</a></li>
-{% endif %}
-{% endfor %}
-        </ul>
-        <div class="lang-switcher">{% set all_langs = ["it", "en"] %}
-          {% set current_lang = page.lang | default(value="it") %}
-          {% for code in all_langs %}
-          {%- if loop.first %}{% elif loop.last %} | {% endif -%}
-          {% if code == current_lang %}
-          <span class="lang-link lang-active">{{ code | upper }}</span>
-          {% else %}
-          {%- for t in page.translations -%}{% if t.lang == code %}<a href="{{ t.permalink }}" class="lang-link">{{ t.lang | upper }}</a>{% endif %}{%- endfor -%}
-          {% endif %}
-          {% endfor %}
-        </div>
-    </div>
-{% endblock header %}
 {% block content %}
 {% set before_compact = page.content | split(pat="<!-- compact -->") | nth(n=0) | default(value="") %}
 {% set after_compact = page.content | split(pat="<!-- /compact -->") | nth(n=1) | default(value="") %}
 {% set body_content = before_compact ~ after_compact %}
+{% set path_parts = page.path | split(pat="/") %}
 <div class="page-content">
     <div class="wrapper">
-        <div id="content">
+        <div id="content"{% if "experiences" in path_parts %} class="page-detail"{% endif %}>
             {{ body_content | safe }}
         </div>
       </div>
