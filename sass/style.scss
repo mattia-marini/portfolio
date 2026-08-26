@@ -178,13 +178,13 @@ font-size: 1.15em;
   font-size: 0.9em;
   padding: 10px 0;
 }
-.lang-switcher .lang-current {
-  color: #8dc;
-  font-weight: bold;
-}
 .lang-switcher .lang-link {
   color: #f8f8f8;
   border: 0;
+}
+.lang-switcher .lang-link.lang-active {
+  color: #f8f8f8;
+  font-weight: bold;
 }
 .lang-switcher .lang-link:hover {
   color: #8fc;
@@ -304,7 +304,7 @@ ul.pager li {
 }
 .list-item {
   padding: 2rem;
-  cursor: pointer;
+  cursor: default;
   transition: background-color 0.15s ease;
 }
 .list-item:hover {
@@ -328,6 +328,13 @@ ul.pager li {
 }
 .list-title a:hover {
   color: #8fc;
+  text-decoration: underline;
+}
+.list-summary a:hover {
+  text-decoration: underline;
+}
+.list-expand-content a:hover {
+  text-decoration: underline;
 }
 .list-subtitle {
   color: #f8f8f8;
@@ -357,7 +364,7 @@ ul.pager li {
 .list-expand-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.25s ease;
+  transition: max-height 0.3s ease, opacity 0.25s ease, padding-top 0.3s ease;
   opacity: 0;
   color: #999;
   padding: 0 2rem;

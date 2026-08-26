@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ lang | default(value="it") }}">
 
 <head>
   <meta charset="utf-8">
@@ -22,37 +22,44 @@
     <div id="header">
       {% if section is undefined or not section.extra.no_default_header %}
       {% if config.extra.site_title %}
-      <h1><a class="site-title" href="{{ config.base_url }}/">{{ config.extra.site_title }}</a></h1>
+      {% set current_lang = lang | default(value="it") %}
+      <h1><a class="site-title" href="{{ config.base_url }}/{% if current_lang != "it" %}en/{% endif %}">{{ config.extra.site_title }}</a></h1>
       {% endif %}
       <ul class="nav nav-tabs">
+        {% set current_lang = lang | default(value="it") %}
         {% set current = "" %}
         {% if section is defined %}
-          {% set current = section.path | lower | split(pat="/") | nth(n=1) %}
+          {% set segments = section.path | lower | split(pat="/") %}
+          {% if current_lang == "en" %}
+            {% set current = segments | nth(n=2) | default(value="") %}
+          {% else %}
+            {% set current = segments | nth(n=1) | default(value="") %}
+          {% endif %}
         {% endif %}
         {% for node in config.extra.nav_bar %}
         {% set active = node.url | lower | split(pat="/") | nth(n=1) %}
         {% if node.external %}
         <li><a class="page-link" href="{{ node.url }}" {% if node.target %} target="{{ node.target }}" {% endif %}>{{ node.name }}</a></li>
         {% else %}
-        <li {% if active == current %}class="active"{% endif %}><a class="page-link" href="{{ node.url | replace(from='$BASE_URL', to=config.base_url) }}">{{ node.name }}</a></li>
+        {% set current_lang = lang | default(value="it") %}
+    <li {% if active == current %}class="active"{% endif %}><a class="page-link" href="{% if lang == "it" %}{{ node.url | replace(from='$BASE_URL/', to=config.base_url ~ '/') }}{% else %}{{ node.url | replace(from='$BASE_URL/', to=config.base_url ~ '/' ~ lang ~ '/') }}{% endif %}">{{ node.name }}</a></li>
         {% endif %}
         {% endfor %}
       </ul>
       {% endif %}
-      {% if page is defined %}
-      {% set current_lang = page.lang %}
-      {% set translations = page.translations %}
-      {% elif section is defined %}
-      {% set current_lang = section.lang %}
-      {% set translations = section.translations | default(value=[]) %}
-      {% else %}
-      {% set current_lang = "it" %}
-      {% set translations = [] %}
-      {% endif %}
-      <div class="lang-switcher">
-        <span class="lang-current">{{ current_lang | upper }}</span>
-        {% for t in translations %}
-        | <a href="{{ t.permalink }}" class="lang-link">{{ t.lang | upper }}</a>
+      {% set current_lang = lang | default(value="it") %}
+      <div class="lang-switcher">{% set all_langs = ["it", "en"] %}
+        {% for code in all_langs %}
+        {%- if loop.first %}{% elif loop.last %} | {% endif -%}
+        {% if code == current_lang %}
+        <span class="lang-link lang-active">{{ code | upper }}</span>
+        {% elif page is defined %}
+          {%- for t in page.translations -%}{% if t.lang == code %}<a href="{{ t.permalink }}" class="lang-link">{{ t.lang | upper }}</a>{% endif %}{%- endfor -%}
+        {% elif section is defined %}
+          {%- for t in section.translations -%}{% if t.lang == code %}<a href="{{ t.permalink }}" class="lang-link">{{ t.lang | upper }}</a>{% endif %}{%- endfor -%}
+        {% else %}
+        <a href="{% if code == "it" %}{{ config.base_url }}/{% else %}{{ config.base_url }}/en/{% endif %}" class="lang-link">{{ code | upper }}</a>
+        {% endif %}
         {% endfor %}
       </div>
     </div>
