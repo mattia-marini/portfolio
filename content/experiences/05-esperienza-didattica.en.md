@@ -6,7 +6,7 @@ subtitle = "One-on-one tutoring and training activities"
 +++
 
 <!-- compact -->
-I have always had a strong interest in **teaching** and the means through which it can best express itself. Since 2022 I have tutored several students in subjects such as mathematics, physics, and computer science — an experience that deepened my interest in computing both as a field of study and as an effective *learning tool*.
+I have always had a strong interest in **teaching** and the means through which it can best express itself. Since 2022 I have tutored several students in subjects such as mathematics, physics, and computer science — an experience that deepened my interest in computing both as a field of study and as an **effective vehicle for learning** other disciplines.
 <!-- /compact -->
 
 ## Overview

@@ -6,7 +6,7 @@ subtitle = "Ripetizioni individuali e attività di potenziamento"
 +++
 
 <!-- compact -->
-Ho sempre nutrito un forte interesse per la **didattica** e per i mezzi attraverso cui questa può esprimersi al meglio. A partire dal 2022 ho seguito diversi studenti in discipline come matematica, fisica e informatica, un'esperienza che ha accresciuto in me l'interesse verso l'informatica sia come oggetto di studio sia come efficace *strumento di apprendimento*.
+Ho sempre nutrito un forte interesse per la **didattica** e per i mezzi attraverso cui questa può esprimersi al meglio. A partire dal 2022 ho seguito diversi studenti in discipline come matematica, fisica e informatica, un'esperienza che ha accresciuto in me l'interesse verso l'informatica sia come oggetto di studio sia come **veicolo efficace per l'apprendimento** di altre discipline.
 <!-- /compact -->
 
 ## Panoramica

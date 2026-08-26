@@ -6,12 +6,12 @@ subtitle = "Computer Science - University of Trento"
 +++
 
 <!-- compact -->
-Since 2022 I have been attending the Bachelor's degree in Computer Science at the **University of Trento**, completing all exams with a weighted average of **29.05/30**. I began my thesis research on *hypergraphs* in September 2025, with graduation expected in November 2026.
+Since 2022 I have been pursuing a Bachelor's degree in Computer Science at the **University of Trento**, completing all exams with a weighted average of **29.05/30**. I began my thesis research on *hypergraphs* in September 2025, with graduation expected in November 2026.
 <!-- /compact -->
 
 ## Overview
 
-Since 2022 I have been a Computer Science student at the **University of Trento**, where I completed all curriculum exams with a weighted average of **29.05/30**. My academic journey allowed me to explore both the theoretical and practical sides of computer science, with a particular interest in *algorithms*, *data structures*, and *computational complexity*.
+Since 2022 I have been a Computer Science student at the **University of Trento**, where I completed all curricular exams with a weighted average of **29.05/30**. My academic journey allowed me to explore both the theoretical and practical sides of computer science, with a particular interest in *algorithms*, *data structures*, and *computational complexity*.
 
 ## Path
 
@@ -51,7 +51,7 @@ This path led me to specialize in **low-level programming**, often combined with
     <tr><th>Date</th><th>Exam</th><th>Grade</th></tr>
   </thead>
   <tbody>
-    <tr><td>12/05/2022</td><td>English B1</td><td>AP</td></tr>
+    <tr><td>12/05/2022</td><td>English B1</td><td>Pass</td></tr>
     <tr><td>13/10/2022</td><td>Entry test - English A2</td><td>Pass</td></tr>
     <tr><td>18/01/2023</td><td>Geometry and Linear Algebra</td><td>28</td></tr>
     <tr><td>06/02/2023</td><td>Mathematical Analysis 1</td><td>30</td></tr>

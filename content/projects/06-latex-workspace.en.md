@@ -2,11 +2,11 @@
 title = "latex-workspace"
 [extra]
 top-right = ""
-subtitle = "Collection of LaTeX notes."
+subtitle = "Collection of LaTeX notes"
 link = "https://github.com/mattia-marini/latex-workspace"
 +++
 
-<!-- compact -->A large collection of `LaTeX` notes for high school tutoring and bachelor students, covering calculus, linear algebra, physics, computer science, and more.<!-- /compact -->
+<!-- compact -->A large collection of `LaTeX` notes for tutoring high school and university students, covering calculus, linear algebra, physics, computer science, and more.<!-- /compact -->
 
 Some of the most notable ones include:
 

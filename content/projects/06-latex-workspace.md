@@ -2,11 +2,11 @@
 title = "latex-workspace"
 [extra]
 top-right = ""
-subtitle = "Raccolta di appunti in LaTeX."
+subtitle = "Raccolta di appunti in LaTeX"
 link = "https://github.com/mattia-marini/latex-workspace"
 +++
 
-<!-- compact -->Una vasta raccolta di appunti in `LaTeX` per il tutoraggio di studenti di scuole superiori e universitari, che copre calculus, algebra lineare, fisica, informatica e altro.<!-- /compact -->
+<!-- compact -->Una vasta raccolta di appunti in `LaTeX` per il tutoraggio di studenti di scuole superiori e universitari, che copre analisi, algebra lineare, fisica, informatica e altro.<!-- /compact -->
 
 Tra i più notevoli:
 

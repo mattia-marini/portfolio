@@ -11,7 +11,7 @@ I attended the **Liceo Bertrand Russell** in Cles, graduating in 2022 with **100
 
 ## Overview
 
-I graduated from the Liceo Scientifico opzione Scienze Applicate **Bertrand Russell** in Cles in 2022, achieving the top grade of **100/100 cum laude**. My high school education provided a thorough grounding in mathematics, physics, and computer science, laying the groundwork for my university studies.
+I graduated from the **Bertrand Russell** Scientific High School (Applied Sciences track) in Cles in 2022, achieving the top grade of **100/100 cum laude**. My high school education provided a thorough grounding in mathematics, physics, and computer science, laying the groundwork for my university studies.
 
 ## Main activities
 

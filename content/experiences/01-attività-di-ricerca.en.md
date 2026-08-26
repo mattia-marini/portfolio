@@ -24,4 +24,4 @@ Starting in September 2025, I began a research activity in the field of **hyperg
 
 - Establishing a new **state of the art** for efficiency and scalability in weighted hypergraph *motif* analysis
 - Performant *open-source* implementation of the developed algorithms
-- Contribution to the scientific community with potential publications in field journals
+- Contribution to the scientific community with potential publications in journals in the field

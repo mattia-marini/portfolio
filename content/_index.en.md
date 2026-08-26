@@ -1,4 +1,5 @@
 +++
+title = "Mattia Marini"
 [extra]
 text_center=true
 no_default_header = true
@@ -14,6 +15,6 @@ no_default_footer = true
 [github](https://github.com/mattia-marini) · [e-mail](mailto:marmattia26@gmail.com)
 
 
-[who am i](/en/who-am-i/) · [experiences](/en/experiences/) · [projects](/en/projects/)
+[who am I](@/who-am-i/_index.en.md) · [experiences](@/experiences/_index.en.md) · [projects](@/projects/_index.en.md)
 
 </div>

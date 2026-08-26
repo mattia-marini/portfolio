@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 {% block title %}
-  {{ config.extra.site_title }}'s {{ section.title | default(value="experiences") }}
+  {{ config.extra.site_title }} — {{ section.title | default(value="experiences") }}
 {% endblock title %}
 {% block content %}
 <div class="page-content">

@@ -2,7 +2,7 @@
 title = "d.r.o.n.e"
 [extra]
 top-right = ""
-subtitle = "Simulated drone network over TCP."
+subtitle = "Simulated drone network over TCP-like protocol"
 link = "https://github.com/AP-2024-25-D-R-O-N-E"
 +++
 

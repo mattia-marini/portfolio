@@ -2,7 +2,7 @@
 title = "rhyperx"
 [extra]
 top-right = ""
-subtitle = "Libreria per ipergrafi con conteggio motif all'avanguardia."
+subtitle = "Libreria di ipergrafi con conteggio motif SOTA"
 link = "https://github.com/rhyperx"
 +++
 

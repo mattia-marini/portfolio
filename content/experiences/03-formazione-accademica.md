@@ -6,7 +6,7 @@ subtitle = "Informatica - Università degli Studi di Trento"
 +++
 
 <!-- compact -->
-Ho frequentato a partire dal 2022 il corso di Laurea in Informatica all'**Università degli Studi di Trento**, completando tutti gli esami con una media ponderata di **29.05/30**. Ho iniziato il lavoro di tesi e ricerca in ambito di *ipergrafi* a settembre 2025, con laurea prevista per novembre 2026.
+Ho frequentato a partire dal 2022 il corso di Laurea in Informatica all'**Università degli Studi di Trento**, completando tutti gli esami con una media ponderata di **29.05/30**. Ho iniziato il lavoro di tesi e ricerca sugli *ipergrafi* a settembre 2025, con laurea prevista per novembre 2026.
 <!-- /compact -->
 
 ## Panoramica
@@ -15,7 +15,7 @@ Dal 2022 sono studente di Informatica presso l'**Università degli Studi di Tren
 
 ## Percorso
 
-Sebbene l'università sia stata fondamentale per costruire una solida conoscenza di base dei principali settori dell'informatica, le attività extracurriculari e le iniziative sviluppate parallelamente al percorso accademico hanno avuto un ruolo formativo altrettanto importante.
+Sebbene l'università sia stata fondamentale per costruire una solida conoscenza di base dei principali settori dell'informatica, le attività extracurricolari e le iniziative sviluppate parallelamente al percorso accademico hanno avuto un ruolo formativo altrettanto importante.
 
 Durante gli anni universitari ho sviluppato autonomamente diversi progetti, spaziando:
 
@@ -51,7 +51,7 @@ Questo percorso mi ha portato a specializzarmi nella **programmazione a basso li
     <tr><th>Data</th><th>Esame</th><th>Voto</th></tr>
   </thead>
   <tbody>
-    <tr><td>12/05/2022</td><td>Inglese B1</td><td>AP</td></tr>
+    <tr><td>12/05/2022</td><td>Inglese B1</td><td>Approvato</td></tr>
     <tr><td>13/10/2022</td><td>Test d'ingresso - Inglese A2</td><td>Approvato</td></tr>
     <tr><td>18/01/2023</td><td>Geometria e algebra lineare</td><td>28</td></tr>
     <tr><td>06/02/2023</td><td>Analisi matematica 1</td><td>30</td></tr>

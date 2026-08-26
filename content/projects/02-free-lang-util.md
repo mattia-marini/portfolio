@@ -2,7 +2,7 @@
 title = "free-lang-util"
 [extra]
 top-right = ""
-subtitle = "Generatore e visualizzatore di tabelle e automi."
+subtitle = "Generatore e visualizzatore di tabelle e automi"
 link = "https://github.com/mattia-marini/free-lang-util"
 +++
 

@@ -11,7 +11,7 @@ Ho progettato e implementato algoritmi combinatori ad alte prestazioni per l'ana
 
 ## Panoramica
 
-A partire da settembre 2025 ho intrapreso un'attività di ricerca nell'ambito degli algoritmi su **ipergrafi**. Il lavoro si inserisce nel contesto della mia tesi di laurea e si concentra sull'analisi di *motif* di ordine superiore in ipergrafi pesati e non di grandi dimensioni, un problema con applicazioni in bioinformatica, analisi di reti sociali e neuroscience.
+A partire da settembre 2025 ho intrapreso un'attività di ricerca nell'ambito degli algoritmi su **ipergrafi**. Il lavoro si inserisce nel contesto della mia tesi di laurea e si concentra sull'analisi di *motif* di ordine superiore in ipergrafi pesati e non di grandi dimensioni, un problema con applicazioni in bioinformatica, analisi di reti sociali e neuroscienze.
 
 ## Attività principali
 

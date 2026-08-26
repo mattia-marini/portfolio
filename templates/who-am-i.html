@@ -16,7 +16,7 @@
     {% if current_lang == "it" %}
 <p>
 Sono un laureando in Informatica presso <strong>l'Università degli Studi di Trento</strong>, attivo nella ricerca scientifica nel campo degli
-algoritmi, con solida esperienza nella didattica individuale
+algoritmi.
 </p>
 
 <p>
@@ -25,28 +25,33 @@ alle <a href="https://www.olimpiadi-informatica.it/">Olimpiadi di Informatica</a
 </p>
 
 <p>
-Unisco una forte propensione al <strong>problem solving</strong> ad un marcato
-<strong>interesse per la didattica</strong> delle discipline scientifiche.
-Amo Rust, la programmazione a basso livello, gli algoritmi e le loro applicazioni a sistemi reali.
+Unisco una forte propensione al <strong>problem solving</strong> a un marcato
+<strong>interesse per l'insegnamento</strong> delle discipline scientifiche, con solida esperienza nella didattica individuale.
+Amo <code>Rust</code>, la programmazione a basso livello, gli algoritmi e le loro applicazioni a sistemi reali.
 </p>
 
 <p>
-Oltre al codice, suono la <strong>chitarra elettrica</strong> e, talvolta, mi occupo di produzione musicale.
-Credo che la musica e la programmazione condividano la medesima ricerca di precisione, eleganza e creatività.
+All'interesse per l'informatica affianco quello per la musica: suono la <strong>chitarra elettrica</strong> e mi occupo di produzione.
+Credo che musica e programmazione abbiano in comune la medesima ricerca di precisione, eleganza e creatività.
 </p>
 {% else %}
 <p>
 I am a Computer Science student at the <strong>University of Trento</strong>, actively involved in scientific research
-in the field of algorithms, with solid experience in individual teaching. I am a
+in the field of algorithms. 
+
+<p>
+I am a
 <a href="https://olimpiadi-informatica.it/olimpiadi-italiane-2021/">national bronze medalist</a>
-at the <a href="https://www.olimpiadi-informatica.it/">Italian Olympiad in Informatics</a>.
+at the <a href="https://www.olimpiadi-informatica.it/">Italian Informatics Olympiad</a>.
+</p>
+
 I combine a strong aptitude for <strong>problem solving</strong> with a marked
-<strong>interest in teaching</strong> scientific subjects.
-I love Rust, low-level programming, algorithms, and their applications to real-world systems.
+<strong>interest in the teaching</strong> of scientific subjects, with solid experience in individual teaching.
+I love <code>Rust</code>, low-level programming, algorithms, and their applications to real-world systems.
 </p>
 
 <p>
-Beyond code, I play the <strong>electric guitar</strong> and occasionally work on music production.
+Beyond coding, I play the <strong>electric guitar</strong> and work on music production.
 I believe that music and programming share the same pursuit of precision, elegance, and creativity.
 </p>
     {% endif %}
@@ -57,11 +62,11 @@ I believe that music and programming share the same pursuit of precision, elegan
   <div class="who-col">
 
     <div class="who-section">
-      {% if current_lang == "it" %}<h2>Linguaggi</h2>{% else %}<h2>Programming languages</h2>{% endif %}
+      {% if current_lang == "it" %}<h2>Linguaggi di programmazione</h2>{% else %}<h2>Programming languages</h2>{% endif %}
       <div class="skill-group">
         <div class="skill-row">
           <span class="skill-name">Rust</span>
-          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
         </div>
         <div class="skill-row">
           <span class="skill-name">C / C++</span>
@@ -69,7 +74,15 @@ I believe that music and programming share the same pursuit of precision, elegan
         </div>
         <div class="skill-row">
           <span class="skill-name">Python</span>
-          <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="40"></div></div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Lua</span>
+          <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Java</span>
+          <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
         </div>
       </div>
     </div>
@@ -88,7 +101,7 @@ I believe that music and programming share the same pursuit of precision, elegan
         <div class="skill-row">
           <span class="skill-name">{% if current_lang == "it" %}Inglese{% else %}English{% endif %}</span>
           <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
-          <span class="skill-label">{% if current_lang == "it" %}c1 — avanzato{% else %}c1 — advanced{% endif %}</span>
+          <span class="skill-label">{% if current_lang == "it" %}C1 — avanzato{% else %}C1 — advanced{% endif %}</span>
         </div>
       </div>
     </div>
@@ -97,20 +110,24 @@ I believe that music and programming share the same pursuit of precision, elegan
       {% if current_lang == "it" %}<h2>Altre competenze</h2>{% else %}<h2>Other skills</h2>{% endif %}
       <div class="skill-group">
         <div class="skill-row">
-          <span class="skill-name">{% if current_lang == "it" %}Algoritmi & strutture dati{% else %}Algorithms & data structures{% endif %}</span>
-          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">{% if current_lang == "it" %}Programmazione a basso livello{% else %}Low-level programming{% endif %}</span>
-          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-name">LaTeX</span>
+          <span class="skill-name">{% if current_lang == "it" %}Algoritmi e strutture dati{% else %}Algorithms and data structures{% endif %}</span>
           <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
         </div>
         <div class="skill-row">
-          <span class="skill-name">Git & DevOps</span>
-          <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+          <span class="skill-name">{% if current_lang == "it" %}LLMs e harnessing{% else %}LLMs and harnessing{% endif %}</span>
+          <div class="skill-bar"><div class="skill-fill" data-width="50"></div></div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">LaTeX</span>
+          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Neovim</span>
+          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Linux</span>
+          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
         </div>
       </div>
     </div>
