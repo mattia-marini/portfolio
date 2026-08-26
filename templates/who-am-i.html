@@ -1,0 +1,126 @@
+{% extends "index.html" %}
+{% block title %}
+  {{ config.extra.site_title }} — {{ section.title }}
+{% endblock title %}
+{% block content %}
+{% set current_lang = lang | default(value="it") %}
+<div class="page-content">
+    <div class="wrapper">
+        <div id="who-content">
+
+<div class="who-top">
+  <div class="who-photo">
+    <img src="{{ get_url(path='/cv_image.jpg', cachebust=false) }}" alt="Mattia Marini">
+  </div>
+  <div class="who-intro">
+    {% if current_lang == "it" %}
+    <p>
+      Sono un programmatore <strong>low-level</strong> con una forte passione per gli <strong>algoritmi</strong>
+      e la loro eleganza. La mia ricerca si concentra sull'analisi di <em>motif</em> su <strong>ipergrafi</strong>
+      pesati di larga scala, ambito in cui ho contribuito a definire l'attuale stato dell'arte.
+    </p>
+    <p>
+      Oltre al codice, suono la <strong>chitarra</strong> — sia elettrica che acustica — e mi occupo
+      di produzione musicale digitale. Credo che la musica e la programmazione condividano la stessa
+      ricerca di precisione, creatività e disciplina.
+    </p>
+    {% else %}
+    <p>
+      I am a <strong>low-level programmer</strong> with a strong passion for <strong>algorithms</strong>
+      and their elegance. My research focuses on <em>motif</em> analysis on large-scale <strong>weighted hypergraphs</strong>,
+      where I have contributed to defining the current state of the art.
+    </p>
+    <p>
+      Beyond code, I play the <strong>guitar</strong> — both electric and acoustic — and work on
+      digital music production. I believe music and programming share the same pursuit of precision,
+      creativity, and discipline.
+    </p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="who-bottom">
+  <div class="who-col">
+
+    <div class="who-section">
+      {% if current_lang == "it" %}<h2>Linguaggi</h2>{% else %}<h2>Languages</h2>{% endif %}
+      <div class="skill-group">
+        <div class="skill-row">
+          <span class="skill-name">Rust</span>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">C / C++</span>
+          <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Python</span>
+          <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="who-col">
+
+    <div class="who-section">
+      {% if current_lang == "it" %}<h2>Lingue</h2>{% else %}<h2>Spoken languages</h2>{% endif %}
+      <div class="skill-group">
+        <div class="skill-row">
+          <span class="skill-name">Italiano</span>
+          <div class="skill-bar"><div class="skill-fill" data-width="100"></div></div>
+          <span class="skill-label">{% if current_lang == "it" %}madrelingua{% else %}native{% endif %}</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">English</span>
+          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          <span class="skill-label">{% if current_lang == "it" %}B2 — fluente{% else %}B2 — fluent{% endif %}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="who-section">
+      {% if current_lang == "it" %}<h2>Altre competenze</h2>{% else %}<h2>Other skills</h2>{% endif %}
+      <div class="skill-group">
+        <div class="skill-row">
+          <span class="skill-name">{% if current_lang == "it" %}Algoritmi & strutture dati{% else %}Algorithms & data structures{% endif %}</span>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">{% if current_lang == "it" %}Programmazione a basso livello{% else %}Low-level programming{% endif %}</span>
+          <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">LaTeX</span>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Git & DevOps</span>
+          <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+        </div>
+    </div>
+</div>
+<script>
+(function(){
+  var fills = document.querySelectorAll('.skill-fill');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var fill = entry.target;
+        var w = fill.getAttribute('data-width');
+        if (w) fill.style.width = w + '%';
+        observer.unobserve(fill);
+      }
+    });
+  }, { threshold: 0.3 });
+  fills.forEach(function(fill) { observer.observe(fill); });
+})();
+</script>
+{% endblock content %}

@@ -11,10 +11,9 @@ no_default_footer = true
 
 ### software engineer
 
-[github](https://github.com/mattia-marini) · [linkedIn](https://bdsexton.github.io/placeholder-page/) · [e-mail](mailto:marmattia26@gmail.com) 
-· [twitter](https://twitter.com/example)
+[github](https://github.com/mattia-marini) · [e-mail](mailto:marmattia26@gmail.com)
 
 
-[esperienze](@/experiences/_index.md) · [progetti](@/projects/_index.md)
+[chi sono](@/who-am-i/_index.md) · [esperienze](@/experiences/_index.md) · [progetti](@/projects/_index.md)
 
 </div>

@@ -23,7 +23,7 @@ theme = "website-theme"
 site_title = "Mattia Marini"
 since = 2019
 nav_bar = [
-    {url = "$BASE_URL/", name = "home"},
+    {url = "$BASE_URL/who-am-i/", name = "who"},
     {url = "$BASE_URL/experiences/", name = "experiences"},
     {url = "$BASE_URL/projects/", name = "projects"},
     {url = "https://github.com/mattia-marini", name = "github", external = true, target="_blank"},

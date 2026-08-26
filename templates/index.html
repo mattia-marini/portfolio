@@ -38,11 +38,16 @@
         {% endif %}
         {% for node in config.extra.nav_bar %}
         {% set active = node.url | lower | split(pat="/") | nth(n=1) %}
+        {% if current_lang == "it" %}
+          {% set nav_name = node.name | replace(from="experiences", to="esperienze") | replace(from="projects", to="progetti") | replace(from="who", to="chi sono") %}
+        {% else %}
+          {% set nav_name = node.name | replace(from="experiences", to="experiences") | replace(from="projects", to="projects") | replace(from="who", to="who am i") %}
+        {% endif %}
         {% if node.external %}
-        <li><a class="page-link" href="{{ node.url }}" {% if node.target %} target="{{ node.target }}" {% endif %}>{{ node.name }}</a></li>
+        <li><a class="page-link" href="{{ node.url }}" {% if node.target %} target="{{ node.target }}" {% endif %}>{{ nav_name }}</a></li>
         {% else %}
         {% set current_lang = lang | default(value="it") %}
-    <li {% if active == current %}class="active"{% endif %}><a class="page-link" href="{% if lang == "it" %}{{ node.url | replace(from='$BASE_URL/', to=config.base_url ~ '/') }}{% else %}{{ node.url | replace(from='$BASE_URL/', to=config.base_url ~ '/' ~ lang ~ '/') }}{% endif %}">{{ node.name }}</a></li>
+    <li {% if active == current %}class="active"{% endif %}><a class="page-link" href="{% if lang == "it" %}{{ node.url | replace(from='$BASE_URL/', to=config.base_url ~ '/') }}{% else %}{{ node.url | replace(from='$BASE_URL/', to=config.base_url ~ '/' ~ lang ~ '/') }}{% endif %}">{{ nav_name }}</a></li>
         {% endif %}
         {% endfor %}
       </ul>
