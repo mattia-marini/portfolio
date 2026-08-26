@@ -10,7 +10,7 @@
 
 <div class="who-top">
   <div class="who-photo">
-    <img src="{{ get_url(path='/cv_image.jpg', cachebust=false) }}" alt="Mattia Marini" width="200" height="225">
+    <img src="{{ get_url(path='/cv_image.jpg', cachebust=false) }}" alt="Mattia Marini" width="300" height="325">
   </div>
   <div class="who-intro">
     {% if current_lang == "it" %}
@@ -57,7 +57,7 @@ I believe that music and programming share the same pursuit of precision, elegan
   <div class="who-col">
 
     <div class="who-section">
-      {% if current_lang == "it" %}<h2>Linguaggi</h2>{% else %}<h2>Languages</h2>{% endif %}
+      {% if current_lang == "it" %}<h2>Linguaggi</h2>{% else %}<h2>Programming languages</h2>{% endif %}
       <div class="skill-group">
         <div class="skill-row">
           <span class="skill-name">Rust</span>
@@ -78,17 +78,17 @@ I believe that music and programming share the same pursuit of precision, elegan
   <div class="who-col">
 
     <div class="who-section">
-      {% if current_lang == "it" %}<h2>Lingue</h2>{% else %}<h2>Spoken languages</h2>{% endif %}
+      {% if current_lang == "it" %}<h2>Lingue</h2>{% else %}<h2>Languages</h2>{% endif %}
       <div class="skill-group">
         <div class="skill-row">
-          <span class="skill-name">Italiano</span>
+          <span class="skill-name">{% if current_lang == "it" %}Italiano{% else %}Italian{% endif %}</span>
           <div class="skill-bar"><div class="skill-fill" data-width="100"></div></div>
           <span class="skill-label">{% if current_lang == "it" %}madrelingua{% else %}native{% endif %}</span>
         </div>
         <div class="skill-row">
-          <span class="skill-name">English</span>
+          <span class="skill-name">{% if current_lang == "it" %}Inglese{% else %}English{% endif %}</span>
           <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
-          <span class="skill-label">{% if current_lang == "it" %}B2 — fluente{% else %}B2 — fluent{% endif %}</span>
+          <span class="skill-label">{% if current_lang == "it" %}c1 — avanzato{% else %}c1 — advanced{% endif %}</span>
         </div>
       </div>
     </div>

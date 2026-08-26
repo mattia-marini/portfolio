@@ -31,7 +31,7 @@ img {
     border: 0;
     display: block;
     max-width: 100%;
-    margin: 0 0 1rem;
+    // margin: 0 0 1rem;
     border-radius: 5px;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -67,7 +67,7 @@ h6 {
     font-size: 12px;
 }
 p {
-    margin: 0 0 10px;
+    // margin: 0 0 10px;
 }
 .text-justify {
     text-align: justify;
@@ -150,6 +150,68 @@ font-size: 1.15em;
     margin-right: 2px;
     line-height: 1.42857;
 }
+.nav-mobile-toggle {
+    display: none;
+}
+
+/* narrow-header mode (phones in portrait): active tab + caret, accordion menu.
+   The threshold is the header's own width: normal tabs show whenever they fit
+   (landscape phones included), the dropdown takes over when they don't. */
+@container site-header (max-width: 600px) {
+  .nav-mobile-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    width: 100%;
+    padding: 10px 15px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #333;
+    color: #8dc;
+    font-family: inherit;
+    font-size: 1.15em;
+    line-height: 1.42857;
+    cursor: pointer;
+  }
+  .nav-mobile-toggle:hover {
+    background-color: #171717;
+    border-bottom: 1px solid #8fc;
+    color: #8fc;
+  }
+  .nav-mobile-caret {
+    font-size: 0.7em;
+    line-height: 1;
+    transition: transform 0.25s ease;
+  }
+  .nav-mobile-toggle.open .nav-mobile-caret {
+    transform: rotate(180deg);
+  }
+  .nav-tabs {
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    opacity: 0;
+    border-bottom: 0;
+    transition: max-height 0.3s ease, opacity 0.25s ease, visibility 0.3s;
+  }
+  .nav-tabs.open {
+    max-height: 260px;
+    visibility: visible;
+    opacity: 1;
+  }
+  .nav-tabs > li {
+    float: none;
+    margin-bottom: 0;
+  }
+  .nav-tabs > li > a {
+    display: block;
+    margin-right: 0;
+    text-align: center;
+  }
+}
 .nav-tabs > li.active > a {
     cursor: default;
     border-bottom: 1px solid #8dc;
@@ -179,6 +241,8 @@ font-size: 1.15em;
 #header {
   display: flex;
   flex-direction: column;
+  container-type: inline-size;
+  container-name: site-header;
 }
 .header-top {
   display: flex;
@@ -466,8 +530,8 @@ ul.pager li {
 }
 .who-photo {
   flex-shrink: 0;
-  width: 200px;
-  height: 225px;
+  width: 300px;
+  height: 355px;
 }
 .who-photo img {
   width: 100%;
@@ -528,7 +592,7 @@ ul.pager li {
   transition: width 0.8s ease;
 }
 .skill-label {
-  flex: 0 0 7rem;
+  flex: 0 0 8rem;
   color: #777;
   font-size: 0.85em;
 }
@@ -596,25 +660,6 @@ ul.pager li {
   }
   #header h1 {
     font-size: 24px;
-  }
-  .nav > li > a {
-    font-size: 1.2em;
-  }
-  .nav-tabs {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    flex-wrap: nowrap;
-    display: flex;
-    scrollbar-width: none;
-  }
-  .nav-tabs::-webkit-scrollbar {
-    display: none;
-  }
-  .nav-tabs > li {
-    float: none;
-    flex-shrink: 0;
   }
   .list-top-right {
     display: none;

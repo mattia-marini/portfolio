@@ -44,24 +44,38 @@
         </div>
       </div>
       {% if section is undefined or not section.extra.no_default_header %}
-      <ul class="nav nav-tabs">
-        {% set current_lang = lang | default(value="it") %}
-        {% set current = "" %}
-        {% if section is defined %}
-          {% set segments = section.path | lower | split(pat="/") %}
-          {% if current_lang == "en" %}
-            {% set current = segments | nth(n=2) | default(value="") %}
-          {% else %}
-            {% set current = segments | nth(n=1) | default(value="") %}
-          {% endif %}
-        {% elif page is defined %}
-          {% set segments = page.path | lower | split(pat="/") %}
-          {% if current_lang == "en" %}
-            {% set current = segments | nth(n=2) | default(value="") %}
-          {% else %}
-            {% set current = segments | nth(n=1) | default(value="") %}
-          {% endif %}
+      {% set current_lang = lang | default(value="it") %}
+      {% set current = "" %}
+      {% if section is defined %}
+        {% set segments = section.path | lower | split(pat="/") %}
+        {% if current_lang == "en" %}
+          {% set current = segments | nth(n=2) | default(value="") %}
+        {% else %}
+          {% set current = segments | nth(n=1) | default(value="") %}
         {% endif %}
+      {% elif page is defined %}
+        {% set segments = page.path | lower | split(pat="/") %}
+        {% if current_lang == "en" %}
+          {% set current = segments | nth(n=2) | default(value="") %}
+        {% else %}
+          {% set current = segments | nth(n=1) | default(value="") %}
+        {% endif %}
+      {% endif %}
+      {% set nav_active_name = "menu" %}
+      {% for node in config.extra.nav_bar %}
+        {% set active = node.url | lower | split(pat="/") | nth(n=1) %}
+        {% if current_lang == "it" %}
+          {% set nav_name = node.name | replace(from="experiences", to="esperienze") | replace(from="projects", to="progetti") | replace(from="who", to="chi sono") %}
+        {% else %}
+          {% set nav_name = node.name | replace(from="experiences", to="experiences") | replace(from="projects", to="projects") | replace(from="who", to="who am i") %}
+        {% endif %}
+        {% if active == current %}{% set_global nav_active_name = nav_name %}{% endif %}
+      {% endfor %}
+      <button class="nav-mobile-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-mobile-label">{{ nav_active_name }}</span>
+        <span class="nav-mobile-caret" aria-hidden="true">&#x25BE;</span>
+      </button>
+      <ul class="nav nav-tabs" id="site-nav">
         {% for node in config.extra.nav_bar %}
         {% set active = node.url | lower | split(pat="/") | nth(n=1) %}
         {% if current_lang == "it" %}
@@ -77,6 +91,33 @@
         {% endif %}
         {% endfor %}
       </ul>
+      <script>
+      (function(){
+        var toggle = document.querySelector('.nav-mobile-toggle');
+        var menu = document.getElementById('site-nav');
+        if (!toggle || !menu) return;
+        function setOpen(open) {
+          toggle.classList.toggle('open', open);
+          menu.classList.toggle('open', open);
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+        toggle.addEventListener('click', function(){
+          setOpen(!menu.classList.contains('open'));
+        });
+        menu.addEventListener('click', function(e){
+          if (e.target.closest('a')) setOpen(false);
+        });
+        document.addEventListener('click', function(e){
+          if (!e.target.closest('.nav-mobile-toggle') && !e.target.closest('.nav-tabs')) setOpen(false);
+        });
+        document.addEventListener('keydown', function(e){
+          if (e.key === 'Escape') setOpen(false);
+        });
+        window.addEventListener('resize', function(){
+          if (getComputedStyle(toggle).display === 'none') setOpen(false);
+        });
+      })();
+      </script>
       {% endif %}
     </div>
     {% endblock header %}
